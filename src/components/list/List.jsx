@@ -13,10 +13,10 @@ const List = ({ name }) => {
 
     if (direction === 'left' && slide > 0) {
       setSlide(slide - 1);
-      listRef.current.style.transform = `translateX(calc(${x}px + 15.5rem)`;
+      listRef.current.style.transform = `translateX(calc(${x}px + 15rem)`;
     } else if (direction === 'right' && slide < 7) {
       setSlide(slide + 1);
-      listRef.current.style.transform = `translateX(calc(${x}px - 15.5rem)`;
+      listRef.current.style.transform = `translateX(calc(${x}px - 15rem)`;
     }
   }
 
@@ -28,7 +28,7 @@ const List = ({ name }) => {
         <div className="container" ref={listRef}>
           {
             [...Array(15).keys()].map(index => (
-              <ListItem number={index}></ListItem>
+              <ListItem number={index} key={index}></ListItem>
             ))
           }
           
